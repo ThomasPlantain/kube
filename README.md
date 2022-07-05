@@ -1,6 +1,6 @@
 # Kubernetes
 
-> kubernetes doc
+> Perso kubernetes doc
 
 Main Contacts:
 
@@ -8,6 +8,15 @@ Main Contacts:
 
 
 ## Table of Content
+- [Kubernetes](#kubernetes)
+  - [Table of Content](#table-of-content)
+  - [Changelog](#changelog)
+  - [Related Documents](#related-documents)
+  - [Systems](#systems)
+  - [Big Picture](#big-picture)
+  - [Features](#features)
+    - [Install](#install)
+    - [Ingress](#ingress)
 
 
 ## Changelog
@@ -25,11 +34,13 @@ Main Contacts:
 
 ## Systems
 
-Here are the system responsibilities per team
+Here are the systems used
 
 | System Name | Description |
 | --- |  --- |
-| micork8s  | {description} |
+| Oracle Virtualbox | {description} |
+| Debian | {description} |
+| micork8s | {description} |
 
 ## Big Picture
 
@@ -40,15 +51,15 @@ Here are the system responsibilities per team
 
 Features are:
 
-- **Feature 1**: {description}
-- **Feature 2**: {description}.
+- **Install microk8s**: {description}
+- **Ingress presentation**: {description}.
 
 In the following parts we will detail those features with the dependencies to each systems and the current considerations.
 
-### Feature 1
+### Install
 
 
-
+### Ingress
 
 
 - Use command microk8s ctr images list. To know more use --help
