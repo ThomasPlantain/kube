@@ -47,7 +47,7 @@ Here are the systems used
 
 ## Big Picture
 
-
+![Kubernetes components](./images/components-of-kubernetes.svg)
 
 
 ## Features
