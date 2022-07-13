@@ -17,8 +17,10 @@ Main Contacts:
   - [Features](#features)
     - [Install](#install)
     - [Kubernetes commands](#kubernetes-commands)
+      - [micro8ks](#micro8ks)
+      - [Kubectl](#kubectl)
     - [INGRESS](#ingress)
-      - [ingress-bot.yaml](#ingress-botyaml)
+      - [ingress-bot-port](#ingress-bot-port)
       - [ingress-bot-path](#ingress-bot-path)
 
 
@@ -27,12 +29,15 @@ Main Contacts:
 | Date | Author | Modifications |
 | --- | --- | --- |
 | 07/2022 | Thomas | Init repo |
+| 13/07/2022 | Thomas | Add kubectl commands |
 
 ## Related Documents
 
 | Name | Type | Description |
 | --- | --- | --- |
 | Microk8s | site web | [microk8s.io](https://microk8s.io/) |
+| Kubernetes.io | site web | [kubernetes.io cheatsheet](https://kubernetes.io/fr/docs/reference/kubectl/cheatsheet/) |
+
 
 
 ## Systems
@@ -55,6 +60,7 @@ Here are the systems used
 Features are:
 
 - **Install microk8s**: {description}
+- **Kubernetes commands**
 - **Ingress presentation**: {description}.
 
 In the following parts we will detail those features with the dependencies to each systems and the current considerations.
@@ -68,34 +74,17 @@ In the following parts we will detail those features with the dependencies to ea
 
 ### Kubernetes commands
 
-- link microk8s to /root/snap/bin/microk8s
-- kubernetes dashboard:
-``microk8s kubectl get all –all-namespaces``
+#### micro8ks
 
+- link microk8s to /root/snap/bin/microk8s
 
 - kubernetes status: 
 ``microk8s status``
 
-
-- Create a microbot deployment with two pods via the kubectl cli
-```
-  microk8s kubectl create deployment microbot --image=dontrebootme/microbot:v1
-  microk8s kubectl scale deployment microbot –replicas=2
-
-
-  microk8s kubectl create deployment nginx –image=nginx
-  microk8s kubectl scale deployment nginx –replicas=2
-```
-
 - Dashboard
+
 ``microk8s dashboard-proxy``
 
-
-- To expose our deployment we need to create a service
-```
-  microk8s kubectl expose deployment microbot --type=NodePort --port=80 --name=microbot-service
-  microk8s kubectl expose deployment nginx --type=NodePort --port=80 –name=nginx-service
-```
 - commands:
 ```
   microk8s status: Provides an overview of the MicroK8s state (running / not running) as well as the set of enabled addons
@@ -110,11 +99,59 @@ In the following parts we will detail those features with the dependencies to ea
   microk8s start: Starts MicroK8s after it is being stopped
 ```
 
+#### Kubectl
+
+
+
+- Create a microbot deployment with two pods via the kubectl cli
+```
+  microk8s kubectl create deployment microbot --image=dontrebootme/microbot:v1
+  microk8s kubectl scale deployment microbot –replicas=2
+
+
+  microk8s kubectl create deployment nginx –image=nginx
+  microk8s kubectl scale deployment nginx –replicas=2
+```
+
+
+- To expose our deployment we need to create a service
+```
+  microk8s kubectl expose deployment microbot --type=NodePort --port=80 --name=microbot-service
+  microk8s kubectl expose deployment nginx --type=NodePort --port=80 –name=nginx-service
+```
+
+- kubernetes list of components:
+
+``microk8s kubectl get all``
+
+![result](./images/getall.PNG)
+
+- kubectl get
+
+```
+# Commandes Get avec un affichage basique
+kubectl get services                     # Liste tous les services d'un namespace
+kubectl get pods --all-namespaces        # Liste tous les Pods de tous les namespaces
+kubectl get pods -o wide                 # Liste tous les Pods du namespace courant, avec plus de détails
+kubectl get deployment my-dep            # Liste un déploiement particulier
+kubectl get pods                         # Liste tous les Pods dans un namespace
+kubectl get pod my-pod -o yaml           # Affiche le YAML du Pod
+```
+
+- kubectl describe
+
+``microk8s kubectl describe pods nginx-xxxx``
+
+![describe](./images/describe.PNG)
+
+- kubectl scale
+
+```
+kubectl scale --replicas=3 rs/foo     # Scale un replicaset nommé 'foo' à 3
+```
 
 ### INGRESS
-
-
-#### ingress-bot.yaml
+#### ingress-bot-port
 
 ```
   root@kube:~# cat /home/thomas/Documents/ingress-bot.yaml 
