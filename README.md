@@ -22,6 +22,7 @@ Main Contacts:
     - [INGRESS](#ingress)
       - [ingress-bot-port](#ingress-bot-port)
       - [ingress-bot-path](#ingress-bot-path)
+    - [Kubernetes Dashboard](#kubernetes-dashboard)
 
 
 ## Changelog
@@ -215,3 +216,16 @@ kubectl scale --replicas=3 rs/foo     # Scale un replicaset nommé 'foo' à 3
 
 
 - Use command: ``microk8s ctr images list``
+
+
+### Kubernetes Dashboard
+
+![Nodes](./images/nodes.png)
+
+![Namespaces](./images/namespaces.png)
+
+![Pods](./images/pods.png)
+
+![Services](images/services.png)
+
+![Replicas](images/replica.png)
