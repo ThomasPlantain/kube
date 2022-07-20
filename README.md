@@ -22,6 +22,9 @@ Main Contacts:
     - [INGRESS](#ingress)
       - [ingress-bot-port](#ingress-bot-port)
       - [ingress-bot-path](#ingress-bot-path)
+    - [Kubectl](#kubectl-1)
+      - [Install kubectl localy](#install-kubectl-localy)
+      - [Link Kubectl to microk8s](#link-kubectl-to-microk8s)
     - [Kubernetes Dashboard](#kubernetes-dashboard)
 
 
@@ -31,6 +34,7 @@ Main Contacts:
 | --- | --- | --- |
 | 07/2022 | Thomas | Init repo |
 | 13/07/2022 | Thomas | Add kubectl commands |
+| 20/07/2022 | Thomas | Dashboard screenshots |
 
 ## Related Documents
 
@@ -216,6 +220,22 @@ kubectl scale --replicas=3 rs/foo     # Scale un replicaset nommé 'foo' à 3
 
 
 - Use command: ``microk8s ctr images list``
+
+### Kubectl
+
+#### Install kubectl localy
+- [Install kubectl on linux](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/#install-using-native-package-management)
+
+
+#### Link Kubectl to microk8s
+- [Link microk8s and kubectl](https://microk8s.io/docs/working-with-kubectl)
+
+```
+cd $HOME
+mkdir .kube
+cd .kube
+microk8s config > config
+```
 
 
 ### Kubernetes Dashboard
