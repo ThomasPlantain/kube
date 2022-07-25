@@ -26,6 +26,9 @@ Main Contacts:
       - [Install kubectl localy](#install-kubectl-localy)
       - [Link Kubectl to microk8s](#link-kubectl-to-microk8s)
     - [Kubernetes Dashboard](#kubernetes-dashboard)
+    - [Deployments](#deployments)
+    - [Charts](#charts)
+    - [Helm](#helm)
 
 
 ## Changelog
@@ -249,3 +252,19 @@ microk8s config > config
 ![Services](images/services.png)
 
 ![Replicas](images/replica.png)
+
+### Deployments
+
+> A Deployment provides declarative updates for Pods and ReplicaSets.
+
+- ``kubectl get deployments``
+
+### Charts
+
+> Helm uses a packaging format called charts. A chart is a collection of files that describe a related set of Kubernetes resources. A single chart might be used to deploy something simple, like a memcached pod, or something complex, like a full web app stack with HTTP servers, databases, caches, and so on.
+
+- [Public charts](https://github.com/helm/charts/tree/master/stable)
+  
+### Helm
+
+- [Helm documentation](https://helm.sh/fr/docs/)
