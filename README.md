@@ -27,6 +27,7 @@ Main Contacts:
       - [Link Kubectl to microk8s](#link-kubectl-to-microk8s)
     - [Kubernetes Dashboard](#kubernetes-dashboard)
     - [Deployments](#deployments)
+      - [Yaml deployment file](#yaml-deployment-file)
     - [Charts](#charts)
     - [Helm](#helm)
 
@@ -258,6 +259,15 @@ microk8s config > config
 > A Deployment provides declarative updates for Pods and ReplicaSets.
 
 - ``kubectl get deployments``
+
+#### Yaml deployment file
+
+- new namespace
+- new service
+- new deployment
+- new ingress rule
+
+**see swag-ui.yaml**
 
 ### Charts
 
