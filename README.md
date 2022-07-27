@@ -30,6 +30,7 @@ Main Contacts:
       - [Yaml deployment file](#yaml-deployment-file)
     - [Charts](#charts)
     - [Helm](#helm)
+    - [Lens](#lens)
 
 
 ## Changelog
@@ -278,3 +279,10 @@ microk8s config > config
 ### Helm
 
 - [Helm documentation](https://helm.sh/fr/docs/)
+
+### Lens
+
+- [Lens Kubernetes Dashboard](https://k8slens.dev/)
+
+![Lens with microk8s](./images/Lens.png)
+

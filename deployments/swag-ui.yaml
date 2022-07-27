@@ -56,9 +56,8 @@ kind: Ingress
 metadata:
   name: swagger-ui-ingress
   namespace: swagger
-  annotations:
-    kubernetes.io/ingress.class: "nginx"
 spec:
+  ingressClassName: nginx
   rules:
   - host: swagger.loc
     http:
