@@ -268,7 +268,7 @@ microk8s config > config
 - new deployment
 - new ingress rule
 
-**see swag-ui.yaml**
+**[see swag-ui.yaml](./deployments/swag-ui.yaml)**
 
 ### Charts
 
