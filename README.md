@@ -38,9 +38,10 @@ Main Contacts:
 
 | Date | Author | Modifications |
 | --- | --- | --- |
-| 07/2022 | Thomas | Init repo |
+| 01/07/2022 | Thomas | Init repo |
 | 13/07/2022 | Thomas | Add kubectl commands |
 | 20/07/2022 | Thomas | Dashboard screenshots |
+| 29/07/2022 | Thomas | Lens Dashboard & Helm charts |
 
 ## Related Documents
 
@@ -48,7 +49,9 @@ Main Contacts:
 | --- | --- | --- |
 | Microk8s | site web | [microk8s.io](https://microk8s.io/) |
 | Kubernetes.io | site web | [kubernetes.io cheatsheet](https://kubernetes.io/fr/docs/reference/kubectl/cheatsheet/) |
-
+| Helm.sh | site web | [Helm web site](https://helm.sh/) |
+| Lens | site web | [Lens K8s dashoard](https://k8slens.dev/) |
+| ArtifactHub | site web | [Kubernetes packages](https://artifacthub.io/) |
 
 
 ## Systems
@@ -57,9 +60,11 @@ Here are the systems used
 
 | System Name | Description |
 | --- |  --- |
-| Oracle Virtualbox | {description} |
-| Debian | {description} |
-| micork8s | {description} |
+| Oracle Virtualbox | VM tools |
+| Debian | Linux distro |
+| micork8s | The lightweight Kubernetes  |
+| Lens | Kubernetes dashboard |
+| Helm | The package manager for Kubernetes |
 
 ## Big Picture
 
