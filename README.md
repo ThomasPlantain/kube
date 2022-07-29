@@ -31,6 +31,7 @@ Main Contacts:
     - [Charts](#charts)
     - [Helm](#helm)
     - [Lens](#lens)
+    - [Argo](#argo)
 
 
 ## Changelog
@@ -280,9 +281,23 @@ microk8s config > config
 
 - [Helm documentation](https://helm.sh/fr/docs/)
 
+
+**Installation**
+```
+curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
+chmod 700 get_helm.sh
+./get_helm.sh
+```
+**create charts**
+- ``helm create myService``
+
 ### Lens
 
 - [Lens Kubernetes Dashboard](https://k8slens.dev/)
 
 ![Lens with microk8s](./images/Lens.png)
+
+### Argo
+
+[Argo CD web site](https://argoproj.github.io/)
 
