@@ -32,6 +32,7 @@ Main Contacts:
     - [Helm](#helm)
     - [Lens](#lens)
     - [Argo](#argo)
+    - [Kubernetes secret](#kubernetes-secret)
 
 
 ## Changelog
@@ -52,7 +53,7 @@ Main Contacts:
 | Helm.sh | site web | [Helm web site](https://helm.sh/) |
 | Lens | site web | [Lens K8s dashoard](https://k8slens.dev/) |
 | ArtifactHub | site web | [Kubernetes packages](https://artifacthub.io/) |
-| Argocd | site web | [Kubernetes-native workflow engine](https://argoproj.github.io/) |
+| Argo-cd | site web | [Kubernetes-native workflow engine](https://argoproj.github.io/) |
 
 
 ## Systems
@@ -329,4 +330,8 @@ myService/
 ### Argo
 
 [Argo CD web site](https://argoproj.github.io/)
+
+### Kubernetes secret
+
+[Secret](https://kubernetes.io/docs/concepts/configuration/secret/)
 
