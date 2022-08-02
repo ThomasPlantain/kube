@@ -33,6 +33,12 @@ Main Contacts:
     - [Lens](#lens)
     - [Argo](#argo)
     - [Kubernetes secret](#kubernetes-secret)
+  - [Kong on Kubernetes](#kong-on-kubernetes)
+    - [Install](#install-1)
+    - [Check install](#check-install)
+    - [Kong services and routes](#kong-services-and-routes)
+      - [Create services](#create-services)
+      - [Create routes](#create-routes)
 
 
 ## Changelog
@@ -343,3 +349,30 @@ myService/
 
 [Secret](https://kubernetes.io/docs/concepts/configuration/secret/)
 
+
+## Kong on Kubernetes
+
+### Install
+
+- create namespace **kong**
+- install with Lens 
+
+![Install with Lens](./images/install-kong.PNG)
+
+### Check install
+
+![Kong in microk8s](./images/kong-all.PNG)
+
+### Kong services and routes
+
+#### Create services
+
+```
+curl -i -X POST http://10.1.42.188:8001/services --data 'name=mock' --data 'protocol=https' --data 'host=mockbin.org' --data 'port=443' --data 'path=/'
+```
+
+#### Create routes
+
+```
+curl -i -X POST http://10.1.42.188:8001/services/mock/routes --data 'name=mock1' --data 'paths[]=/mymock'
+```
