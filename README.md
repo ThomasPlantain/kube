@@ -13,7 +13,7 @@ Main Contacts:
   - [Changelog](#changelog)
   - [Related Documents](#related-documents)
   - [Systems](#systems)
-  - [Big Picture](#big-picture)
+  - [Architecture de Kubernetes](#architecture-de-kubernetes)
   - [Features](#features)
     - [Install](#install)
     - [Kubernetes commands](#kubernetes-commands)
@@ -27,7 +27,7 @@ Main Contacts:
       - [Link Kubectl to microk8s](#link-kubectl-to-microk8s)
     - [Kubernetes Dashboard](#kubernetes-dashboard)
     - [Deployments](#deployments)
-      - [Yaml deployment file](#yaml-deployment-file)
+      - [Managing resources](#managing-resources)
     - [Charts](#charts)
     - [Helm](#helm)
     - [Lens](#lens)
@@ -68,9 +68,15 @@ Here are the systems used
 | Lens | Kubernetes dashboard |
 | Helm | The package manager for Kubernetes |
 
-## Big Picture
+## Architecture de Kubernetes
 
 ![Kubernetes components](./images/components-of-kubernetes.svg)
+
+> Dans un cluster Kubernetes, il existe deux rôles de machines : le(s) nœud(s) maîtres(master) et le(s) nœud(s) de travail (workers).
+Le(s) nœud maître exécute(ent) le plan de contrôle Kubernetes, qui est responsable de la gestion des workers, prend les décisions de planification et met en œuvre des modifications pour conduire le cluster à l'état souhaité.
+Les workers, comme leur nom l’indique sont chargés de gérer les applications via des pods.
+
+- [Introduction à Kubernetes](https://blog.stephane-robert.info/post/introduction-kubernetes/)
 
 
 ## Features
@@ -269,7 +275,9 @@ microk8s config > config
 
 - ``kubectl get deployments``
 
-#### Yaml deployment file
+#### Managing resources
+
+> Many applications require multiple resources to be created, such as a Deployment and a Service. Management of multiple resources can be simplified by grouping them together in the same file (separated by --- in YAML).
 
 - new namespace
 - new service
