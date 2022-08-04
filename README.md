@@ -50,6 +50,8 @@ Main Contacts:
 | 13/07/2022 | Thomas | Add kubectl commands |
 | 20/07/2022 | Thomas | Dashboard screenshots |
 | 29/07/2022 | Thomas | Lens Dashboard & Helm charts |
+| 02/08/2022 | Thomas | Install Kong |
+
 
 ## Related Documents
 
@@ -61,7 +63,8 @@ Main Contacts:
 | Lens | site web | [Lens K8s dashoard](https://k8slens.dev/) |
 | ArtifactHub | site web | [Kubernetes packages](https://artifacthub.io/) |
 | Argo-cd | site web | [Kubernetes-native workflow engine](https://argoproj.github.io/) |
-
+| Kong | site web | [Kong](https://konghq.com/) |
+| Octant | Repo Github | [Octant](https://github.com/vmware-tanzu/octant) |
 
 ## Systems
 
@@ -74,6 +77,7 @@ Here are the systems used
 | micork8s | The lightweight Kubernetes  |
 | Lens | Kubernetes dashboard |
 | Helm | The package manager for Kubernetes |
+| Kong | API Gateway |
 
 ## Architecture de Kubernetes
 
