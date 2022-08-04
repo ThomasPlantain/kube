@@ -31,6 +31,7 @@ Main Contacts:
     - [Charts](#charts)
     - [Helm](#helm)
     - [Lens](#lens)
+    - [Octant](#octant)
     - [Argo](#argo)
     - [Kubernetes secret](#kubernetes-secret)
   - [Kong on Kubernetes](#kong-on-kubernetes)
@@ -341,6 +342,13 @@ myService/
 
 ![Lens with microk8s](./images/Lens.png)
 
+### Octant
+
+> Another Kubernetes dashboard
+
+![Octant](./images/octant_1.PNG)
+
+
 ### Argo
 
 [Argo CD web site](https://argoproj.github.io/)
@@ -376,3 +384,6 @@ curl -i -X POST http://10.1.42.188:8001/services --data 'name=mock' --data 'prot
 ```
 curl -i -X POST http://10.1.42.188:8001/services/mock/routes --data 'name=mock1' --data 'paths[]=/mymock'
 ```
+
+![kong gateway](./images/kong_route_mock.PNG)
+
