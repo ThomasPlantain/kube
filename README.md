@@ -1,6 +1,7 @@
 # Kubernetes
 
-> Perso kubernetes doc
+> Personal kubernetes web doc.
+> Install, deploy app, dashboards, ...
 
 Main Contacts:
 
@@ -65,6 +66,7 @@ Main Contacts:
 | Argo-cd | site web | [Kubernetes-native workflow engine](https://argoproj.github.io/) |
 | Kong | site web | [Kong](https://konghq.com/) |
 | Octant | Repo Github | [Octant](https://github.com/vmware-tanzu/octant) |
+| Linkerd | site web | [Linkerd is a service mesh for Kubernetes](https://linkerd.io/2.11/overview/) |
 
 ## Systems
 
