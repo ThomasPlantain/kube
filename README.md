@@ -41,6 +41,7 @@ Main Contacts:
     - [Kong services and routes](#kong-services-and-routes)
       - [Create services](#create-services)
       - [Create routes](#create-routes)
+      - [Add Auth key plugin](#add-auth-key-plugin)
 
 
 ## Changelog
@@ -392,4 +393,31 @@ curl -i -X POST http://10.1.42.188:8001/services/mock/routes --data 'name=mock1'
 ```
 
 ![kong gateway](./images/kong_route_mock.PNG)
+
+#### Add Auth key plugin
+
+- Enable apikey for my route
+  
+```
+curl -X POST http://10.1.42.188:8001/routes/mock1/plugins --data "name=key-auth" --data "config.key_names=apikey"
+```
+
+- Create a customer
+
+```
+curl -d "username=user123" http://10.1.42.188:8001/consumers/
+```
+
+- Create a key for this customer
+
+```
+curl -X POST http://10.1.42.188:8001/consumers/user123/key-auth
+```
+- Copy the key value
+
+- List the apikeys
+
+```
+curl -X GET http://10.1.42.188:8001/key-auths
+```
 
