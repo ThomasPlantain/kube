@@ -399,14 +399,27 @@ curl -i -X POST http://10.1.42.188:8001/services/mock/routes --data 'name=mock1'
 - Enable apikey for my route
   
 ```
-curl -X POST http://10.1.42.188:8001/routes/mock1/plugins --data "name=key-auth" --data "config.key_names=apikey"
+curl -X POST http://10.1.42.188:8001/routes/mock1/plugins --data "name=key-auth" 
 ```
+
+![Add plugins](./images/kong-add-apikey.PNG)
+
+
+- 401 response code now!
+  
+![401](./images/kong-not-authorized.PNG)
+
+
 
 - Create a customer
 
 ```
 curl -d "username=user123" http://10.1.42.188:8001/consumers/
 ```
+
+![Add consumer](./images/kong-create-consumer-thomas.PNG)
+
+![Get consumers](./images/kong-get-consumers.PNG)
 
 - Create a key for this customer
 
