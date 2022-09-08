@@ -409,7 +409,10 @@ curl -X POST http://10.1.42.188:8001/routes/mock1/plugins --data "name=key-auth"
   
 ![401](./images/kong-not-authorized.PNG)
 
-
+**warning - to delete a plugin**
+```
+curl -X DELETE http://$KONG_ADMIN_LISTEN/plugins/{id}
+```
 
 - Create a customer
 
