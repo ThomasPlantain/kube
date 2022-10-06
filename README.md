@@ -17,6 +17,8 @@ Main Contacts:
   - [Architecture de Kubernetes](#architecture-de-kubernetes)
   - [Features](#features)
     - [Install](#install)
+      - [microk8s](#microk8s)
+      - [kind](#kind)
     - [Kubernetes commands](#kubernetes-commands)
       - [micro8ks](#micro8ks)
       - [Kubectl](#kubectl)
@@ -29,12 +31,11 @@ Main Contacts:
     - [Kubernetes Dashboard](#kubernetes-dashboard)
     - [Deployments](#deployments)
       - [Managing resources](#managing-resources)
-    - [Charts](#charts)
-    - [Helm](#helm)
-    - [Lens](#lens)
-    - [Octant](#octant)
-    - [Argo](#argo)
     - [Kubernetes secret](#kubernetes-secret)
+  - [Helm](#helm)
+  - [Lens](#lens)
+  - [Octant](#octant)
+  - [Argo](#argo)
   - [Kong on Kubernetes](#kong-on-kubernetes)
     - [Install](#install-1)
     - [Check install](#check-install)
@@ -53,6 +54,7 @@ Main Contacts:
 | 20/07/2022 | Thomas | Dashboard screenshots |
 | 29/07/2022 | Thomas | Lens Dashboard & Helm charts |
 | 02/08/2022 | Thomas | Install Kong |
+| 06/10/2022 | Thomas | Install Kind |
 
 
 ## Related Documents
@@ -70,6 +72,7 @@ Main Contacts:
 | Linkerd | site web | [Linkerd is a service mesh for Kubernetes](https://linkerd.io/2.11/overview/) |
 | Tuto | blog | [Introduction à Kubernetes](https://blog.stephane-robert.info/post/introduction-kubernetes/) |
 | cncf presentations | Github | [cncf kubernetes](https://github.com/cncf/presentations/tree/master/kubernetes) |
+| Kind | site web | [Kind: local Kubernetes clusters using Docker](https://kind.sigs.k8s.io/) |
 
 ## Systems
 
@@ -80,6 +83,7 @@ Here are the systems used
 | Oracle Virtualbox | VM tools |
 | Debian | Linux distro |
 | micork8s | The lightweight Kubernetes  |
+| kind | Local Kubernetes clusters using Docker  |
 | Lens | Kubernetes dashboard |
 | Helm | The package manager for Kubernetes |
 | Kong | API Gateway |
@@ -99,7 +103,7 @@ Les workers, comme leur nom l’indique sont chargés de gérer les applications
 
 Features are:
 
-- **Install microk8s**: {description}
+- **Install Kubernetes**: microk8s & kind
 - **Kubernetes commands**
 - **Ingress presentation**: {description}.
 
@@ -107,10 +111,28 @@ In the following parts we will detail those features with the dependencies to ea
 
 ### Install
 
+#### microk8s
+
 - First install snap
 - Run snap install:
 
 ``sudo snap install microk8s --classic``
+
+#### kind
+
+```
+curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.16.0/kind-linux-amd64
+chmod +x ./kind
+sudo mv ./kind /usr/local/bin/kind
+```
+
+```
+# create cluster
+kind create cluster
+
+kubectl cluster-info --context kind-kind
+```
+
 
 ### Kubernetes commands
 
@@ -302,13 +324,14 @@ microk8s config > config
 
 **[see swag-ui.yaml](./deployments/swag-ui.yaml)**
 
-### Charts
+### Kubernetes secret
+
+[Secret](https://kubernetes.io/docs/concepts/configuration/secret/)
+
+  
+## Helm
 
 > Helm uses a packaging format called charts. A chart is a collection of files that describe a related set of Kubernetes resources. A single chart might be used to deploy something simple, like a memcached pod, or something complex, like a full web app stack with HTTP servers, databases, caches, and so on.
-
-- [Public charts](https://github.com/helm/charts/tree/master/stable)
-  
-### Helm
 
 - [Helm documentation](https://helm.sh/fr/docs/)
 
@@ -356,26 +379,22 @@ helm install strapi TrueCharts/strapi -n strapi
 
 ![Helm releases](./images/helm-releases.PNG)
 
-### Lens
+## Lens
 
 - [Lens Kubernetes Dashboard](https://k8slens.dev/)
 
 ![Lens with microk8s](./images/Lens.png)
 
-### Octant
+## Octant
 
 > Another Kubernetes dashboard
 
 ![Octant](./images/octant_1.PNG)
 
 
-### Argo
+## Argo
 
 [Argo CD web site](https://argoproj.github.io/)
-
-### Kubernetes secret
-
-[Secret](https://kubernetes.io/docs/concepts/configuration/secret/)
 
 
 ## Kong on Kubernetes
