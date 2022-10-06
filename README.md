@@ -337,13 +337,24 @@ myService/
 
 ```
 
-**Install charts**
+**Add Repo**
 
+```
+helm repo add artifact-hub https://artifacthub.github.io/helm-charts
+helm repo add TrueCharts https://charts.truecharts.org
+helm repo list
+helm repo update
+```
 
-![Helm install](./images/helm-jenkins-started.PNG)
+**Search & Install charts**
+
+```
+helm search repo strapi
+helm install strapi TrueCharts/strapi -n strapi
+```
+
 
 ![Helm releases](./images/helm-releases.PNG)
-
 
 ### Lens
 
